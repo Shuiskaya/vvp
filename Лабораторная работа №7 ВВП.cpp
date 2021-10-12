@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <cmath>
 
 using namespace std;
@@ -58,13 +58,23 @@ int main()
         }
 
         if (num == 6) {
-            cout << "\n";
+            cout << "Введите A1, B1 и C1 по условию:\n";
             cin >> a >> b >> c;
-            cout << "\n";
+            cout << "Введите A2, B2 и C2 по условию:\n";
             cin >> a2 >> b2 >> c2;
-            y = (c2 * a - a2 * c) / (b2 * a - a2 * b);
-            x = (c - b * y) / a;
-            cout << x << " " << y << endl << endl;
+            int o1, o2, o3;
+            o1 = a * b2 - a2 * b;
+            o2 = c * b2 - b * c2;
+            o3 = a * c2 - a2 * c;
+
+            if (o1 == 0) {
+                cout << "Решения нет\n\n";
+            }
+            else {
+                x = o2 / o1;
+                y = o3 / o1;
+                cout << "Значение Х: " << x << "\nЗначение Y: " << y << endl << endl;
+            }
         }
 
         if (num < 0 || num > 6) {
